@@ -1,6 +1,6 @@
 # ruby_cucumber_course
 
-Practice for ruby and cucumber for TA
+-- Practice for ruby and cucumber for TA
 
 1. What is ruby?
 	is a programming language oriented to object, the sintaxis of this language is more compact and it is not necessary 
@@ -24,6 +24,6 @@ According to the explanation there are three testing tiers
 
 
 
-Folder for scripts and code for:
+-- Folder for scripts and code for:
 
 Lourdes Villca
