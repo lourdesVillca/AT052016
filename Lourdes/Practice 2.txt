@@ -1,0 +1,25 @@
+1. The way to add comments on ruby (inline - multiline)
+   There are two ways to add comments in ruby
+	for inline comments we should use the number sign(#) at the begining of the comment
+	# inline comment
+
+	For multiline comments we should use =begin and =end, see the following example
+	=begin
+		comment first line
+		comment second line
+	=end
+
+2. When you should use each type
+   inline comments is for notes and trivial information
+   multiline comments is for code documentation
+
+3. create and script using inline-multiline comments
+
+# This is an inline comment
+
+puts "This is and example of comments"
+
+=begin
+this is 
+my multiline
+=end

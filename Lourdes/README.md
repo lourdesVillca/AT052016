@@ -2,28 +2,6 @@
 
 -- Practice for ruby and cucumber for TA
 
-1. What is ruby?
-	is a programming language oriented to object, the sintaxis of this language is more compact and it is not necessary 
-	to write a lot of code to run a test case, is for that reason that we can say Ruby is oriented for testers
-
-2.What pros/cons you considered from the point explained in the class
-
- Pros
-	Is flexible to use because it is not needed to include and import files like an other languages
-	As we saw it is not needed to write a lot of code
-	
-  cons
-	Maybe for people that was custom to program with another program language  it would be a little difficult to understand the new sintaxis
-
-3. According what we talked today, what are the 3 testing tiers?
-
-According to the explanation there are three testing tiers
-	- GUI, in this tier we test the User Interface 
-	- Services, in this tier we test the mid tier 
-	- Backend, in this level we test the code. How have been programming some functionality
-
-
-
 -- Folder for scripts and code for:
 
 Lourdes Villca
