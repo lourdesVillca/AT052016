@@ -1,0 +1,16 @@
+2.- The following message is displayed when we try to use a non defined variable.
+
+PracticeVariables.rb:15:in `<main>': undefined local variable or method `num8' f
+or main:Object (NameError)
+
+The displayed message said that we have are tried to uses an undefined variable and show the name of the variable
+
+
+RESULT OBTAINED FROM OPERATORS.RB
+---------------------------------
+The result for 15 % 7 is 1
+The validation is true
+Result 7
+Logical operator is true
+
+ 
