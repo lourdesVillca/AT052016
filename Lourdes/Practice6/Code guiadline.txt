@@ -1,0 +1,43 @@
+Format (int, float, string)
+---------------------------
+We need to specicy what kind of variable we are declaring
+ci = 5930880
+compra = 23.25
+name = "Lourdes"
+
+
+Classe
+-------
+The class name should have the same name of the file
+
+Methods
+-------
+When you call to a methond you should use parenthesis  
+	def method_name(value) 
+     		puts “example of method with #{value}" 
+	end 
+	method_name(“Ruby") 
+
+Variables
+----------
+It should start with lower case character and every word should be divide with a low line
+	product_price = 12
+ 
+Getter/Setter
+------------- 
+For getter method we should use the following statement
+	attr_reader :name, :age
+For setter method we should use the following statement
+	attr_writter :name
+If you need both a setter and getter for an attribute use "attr_accessor"
+ 	attr_accessor :name
+
+If condition
+------------
+for a simple if condition we should use if-then-else in one line
+
+def check_sign(number)
+  number > 0 ? "#{number} is positive" : "#{number} is negative"
+end
+
+
