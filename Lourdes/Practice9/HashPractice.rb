@@ -10,13 +10,13 @@ class HashPractice
 		size.times do|index|
 			puts "Insert the key"
 			key = gets.chomp
-			if (exist_key(key))
+			if (exist_key?(key))
 				puts "the inserted key exist on the hash, please insert another Key"
 				key = gets.chomp
 			end
 			puts "Insert the value"
 			value = gets.chomp
-			if (exist_value(value))
+			if (exist_value?(value))
 				puts "the inserted value exist on the hash, please insert another value"
 				value = gets.chomp
 			end
@@ -35,10 +35,10 @@ class HashPractice
 	def print_hash created_hash
 		p created_hash
 	end
-	def exist_key value
+	def exist_key? value
 		@hash.has_key?(value)
 	end
-	def exist_value value
+	def exist_value? value
 		@hash.has_value?(value)
 	end
 

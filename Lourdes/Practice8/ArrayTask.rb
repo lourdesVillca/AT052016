@@ -1,14 +1,21 @@
 class ArrayTask
 	def create_arrays
-		number_array= [1,2,3,4,5]
-		new_array = Array.new
-		number_array.length.times do |position|
-			new_array.push(number_array[position])
+		puts "Insert the size of the array"
+		size = gets.chomp.to_i
+		number_array = Array.new
+			alphabetical_array = Array.new
+		mixed_arrays = Array.new
+
+		size.times do |position|
+			puts "Insert the value of the array"
+			value_array = gets.chomp
+				if value_array.to_i.to_s == value_array.to_s then number_array.push(value_array) else  alphabetical_array.push(value_array) end
+			
 
 		end
-		alphabetical_array = ["a","b","c","d"]
 		mixed_arrays = number_array+alphabetical_array
-		return new_array, alphabetical_array, mixed_arrays
+
+		return number_array, alphabetical_array, mixed_arrays
 
 	end
 	def union_arrays first_array, second_array
@@ -40,6 +47,7 @@ array1, array2, array3 = array_task.create_arrays
 puts "Numeric array: #{array1}"
 puts "Alphabetical array: #{array2}"
 puts "Mixed array: #{array3}"
+
 array1 = [1,3,6,5]
 array2 = [2,8,5,4]
 
