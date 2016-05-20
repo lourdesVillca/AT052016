@@ -1,29 +1,18 @@
-module Convertions
-	def minutes_to_hours minutes
-		hours = minutes/60
-		puts "#{minutes} min representa #{hours}"
-	end
-
-	def hours_to_days hours
-		days = hours/24
-		puts "#{hours} hrs representa #{days}"
-	end
-
-	def days_to_month days
-		month = days/30
-		puts "#{days} hrs representa #{month}"
-	end
-end
-
-
+require_relative "ConvertionTime"
+require 'singleton'
 class Registration
+	include Singleton
+	include ConvertionTime
 	attr_accessor :user_name
 	attr_accessor :user_id
-	include Convertions
+	
 
 	def initialize
 		@user_name = nil
 		@user_id = nil
+		@file_log = File.open('execution.log','w+')
+		@file_log.truncate(0)
+				
 	end
 
 	def insert_data cantidad
@@ -31,38 +20,35 @@ class Registration
 		cantidad.times do |index|
 			puts "Inserte el nombre del usuario"
 			@user_name = verify_user_name(gets.chomp)
+			@file_log.write("#{@user_name}\n")
 			puts "Inserte el Id del usuario"
-			@user_id = verify_user_id(gets.chomp)
+			@user_id = gets.chomp
+			@file_log.write("#{@user_id}\n")
 			@hash_data.store @user_id,@user_name
 			puts "Que tipo de conversion desea?"
 			options_to_convert_time
 			tipo = gets.chomp
-			selected_option(tipo)
+			@file_log.write("#{tipo}\n")
+			@file_log.write("#{selected_option(tipo)}\n")
 
 		end
-		
+		@file_log.close	
 
 
 	end
+
 	def verify_user_name name
-		
-		while name.length > 11
-			puts "El nombre de usuario no debe contener mas de 11 caracteres"
-			name = gets.chomp
-		end
-		return name
-	end
-	def verify_user_id id
 		aux = true
 		result = 0
 		while aux
-			if id =~ /^[a-z0-9]*$/
-				result = id
+			if name =~ /^[a-z0-9]{1,11}$/
+				result = name
 				aux = false
 
 			else
-				puts "El Id ingresado no es valido, inserte nuevamente"
-				id = gets.chomp
+				puts "El Nombre ingresado no es valido, inserte nuevamente"
+				name = gets.chomp
+				@file_log.write("#{name}")
 			end
 		end
 
@@ -71,14 +57,20 @@ class Registration
 	def amount_of_users
 		puts "Inserte la cantidad de usuarios"
 		cantidad = gets.chomp.to_i
+		@file_log.write("#{cantidad}\n")
 
 		if (cantidad >= 3 && cantidad <= 15)
 			insert_data(cantidad)
 			
 		else
-			while !(cantidad > 3 && cantidad <15)
+			while !(cantidad >= 3 && cantidad <=15)
 				puts "Inserte otra cantidad, este debe estar entre 3-15"
-		 		cantidad = gets.chomp
+		 		cantidad = gets.chomp.to_i
+		 		@file_log.write("#{cantidad}\n")
+		 		if (cantidad >= 3 && cantidad <= 15)
+					insert_data(cantidad)
+				end
+
 			end
 		end
 	end
@@ -91,15 +83,19 @@ class Registration
 	def selected_option tipo
 		
 		case tipo
- 				when tipo == "a" then puts "Inserte el valor en minutos"; Convertions.minutes_to_hours(gets.chomp)    
- 				when tipo == "b" then puts "Inserte el valor en horas" ; Convertions.hours_to_days(gets.chomp)
- 				when tipo == "c"then puts "Inserte el Valor dias"; Convertions.days_to_month(gets.chomp)
+ 				when "a" then puts "Inserte el valor en minutos"
+ 					ConvertionTime.minutes_to_hours gets.chomp.to_i  
+ 				when "b" then puts "Inserte el valor en horas"
+ 					ConvertionTime.hours_to_days gets.chomp.to_i
+ 				when "c" then puts "Inserte el Valor dias"
+ 					ConvertionTime.days_to_month gets.chomp.to_i
+ 				else puts "no compara"
  				
 		end
 
 	
 	end
-end
 
-r = Registration.new
+end
+r = Registration.instance
 r.amount_of_users
