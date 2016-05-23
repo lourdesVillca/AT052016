@@ -1,0 +1,51 @@
+Research :
+When and why BDD was defined
+	BDD come from the evolution of Test Driven Development(TDD) and Acceptance Test Driven Planning(ATDD)
+	It was defined because BDD is a set of best practices for writing great tests and improves communication between 
+	business and technical teams to create software with business value
+
+The most important aspects of BDD
+
+	the most importance aspects are:
+	- The entire team collaborates in the development process
+	- All team speak in the same languages that help us to understand what the other people speaks
+	- easy feedback 
+	- Focus on Behavior, how users will interact with the product. 
+ 
+Why is useful and when could be applied.
+It is useful because we can automate and run test cases in less time, we could applied this in the regression test level
+
+Which type of teams could implement BDD
+I think when we have a project that has and incremental developtment process we need to aply BDD
+
+Structure of a feature – Give an example
+
+	A feature should have
+	Name: Save last search of contacts	
+	Size: 45
+	Priority: High
+
+Structure of a user story – Give an example
+A user story have Title, and a narrative section
+	Title: 
+	Narrative:
+	As a [role]
+	I want [feature]
+	So that [benefit] 
+Save the last searching in contact module  
+As a contact administrator I want to see my last searched that I made, so that allow me to see the last selected or searched contact   
+
+Structure of a scenario – Give an example
+	Structure :
+	Given some initial context (the givens)
+	When an event occurs
+	then ensure some outcomes
+
+	Given that a contact name 
+	when  he make a search for that contact
+	then he should see his search parameters saved in the search section
+
+
+Differences between BDD and BDT
+BDD is to make and define the scenario 
+BDT is a set of automated test cases and this is a branch of BDD
