@@ -1,0 +1,13 @@
+D:\BDT\cucumber\cucumber_test\features>cucumber save_customer.feature --dry -run
+*** WARNING: You must use ANSICON 1.31 or higher (https://github.com/adoxa/ansicon/) to get coloured output on Windows
+0 scenarios
+0 steps
+
+D:\BDT\cucumber\cucumber_test\features>cucumber save_customer.feature
+*** WARNING: You must use ANSICON 1.31 or higher (https://github.com/adoxa/ansicon/) to get coloured output on Windows
+0 scenarios
+0 steps
+0m0.000s
+
+the first execution only read the file to find sintax erros(Doesn't display a time at the end)  
+and the second execute the content into the feature file and for that reason in the second execution is displaed the time
